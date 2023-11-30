@@ -44,7 +44,7 @@ def main():
     if mode == "train":
 
         TRAINER.train()
-        logging.debug('finished training')
+        logging.info('finished training')
     
     elif mode == "test":
 
@@ -55,3 +55,4 @@ if __name__ == '__main__':
 
     main()
 
+log_file.close()
