@@ -2,6 +2,12 @@ import os
 import sys
 sys.path.append(os.path.join(".."))
 
+import logging
+logging.basicConfig(filename='logfile.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+log_file = open('logfile.log', 'w')
+sys.stdout = log_file
+sys.stderr = log_file
+
 my_folder = os.path.join('/g', 'prevedel', 'members', 'Rauscher')
 project_dir = os.path.join(my_folder, 'projects', 'N2N-BSD300-1')
 
