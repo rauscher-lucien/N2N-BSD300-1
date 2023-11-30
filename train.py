@@ -150,9 +150,6 @@ class Trainer:
                 loss = l1_loss(output_net, clean_data)
                 loss.backward()
                 optim.step()
-
-                logging.info('TRAIN: EPOCH %d: BATCH %04d: LOSS: %.4f: '
-                      % (epoch, batch, loss))
                 
             if (epoch % self.epoch_save_freq) == 0:
                 self.save(self.dir_checkpoints, Network, epoch)

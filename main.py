@@ -4,7 +4,7 @@ sys.path.append(os.path.join(".."))
 
 import logging
 logging.basicConfig(filename='logfile.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
-log_file = open('logfile.log', 'w', buffering=0)
+log_file = open('logfile.log', 'w', buffering=1)
 sys.stdout = log_file
 sys.stderr = log_file
 
