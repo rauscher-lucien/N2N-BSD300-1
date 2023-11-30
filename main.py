@@ -36,7 +36,7 @@ def main():
     data_dict['beta2'] = 0.999
 
     # hyperparameters
-    data_dict['num_epochs'] = 50
+    data_dict['num_epochs'] = 10
     data_dict['epoch_save_freq'] = 10
     data_dict['epoch_to_load'] = None
 
