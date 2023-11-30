@@ -1,4 +1,7 @@
 import os
+import sys
+sys.path.append(os.path.join(".."))
+
 from PIL import Image
 
 my_folder = os.path.join('/g', 'prevedel', 'members', 'Rauscher')
