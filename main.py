@@ -43,8 +43,8 @@ def main():
 
     if mode == "train":
 
+        logging.info('starting training')
         TRAINER.train()
-        logging.info('finished training')
     
     elif mode == "test":
 
