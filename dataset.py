@@ -1,5 +1,5 @@
 import os
-import cv2
+from PIL import Image
 import torch
 
 class ImageDataset(torch.utils.data.Dataset):
@@ -10,7 +10,7 @@ class ImageDataset(torch.utils.data.Dataset):
 
     def __getitem__(self, index):
         filename = self.file_list[index]
-        image = cv2.imread(os.path.join(self.data_dir, filename), cv2.IMREAD_GRAYSCALE)
+        image = Image.open(os.path.join(self.data_dir, filename)).convert('L')
 
         if self.transform:
             image = self.transform(image)

@@ -3,7 +3,6 @@ import sys
 sys.path.append(os.path.join(".."))
 
 my_folder = os.path.join('/g', 'prevedel', 'members', 'Rauscher')
-data_folder = os.path.join(my_folder, 'data', 'BSD300', 'clean', 'test')
 
 from train import Trainer
 
