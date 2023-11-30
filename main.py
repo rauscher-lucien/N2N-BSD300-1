@@ -8,8 +8,8 @@ log_file = open('logfile.log', 'w')
 sys.stdout = log_file
 sys.stderr = log_file
 
-# my_folder = os.path.join('/g', 'prevedel', 'members', 'Rauscher')
-my_folder = os.path.join('Z:', 'members', 'Rauscher')
+my_folder = os.path.join('/g', 'prevedel', 'members', 'Rauscher')
+# my_folder = os.path.join('Z:', 'members', 'Rauscher')
 project_dir = os.path.join(my_folder, 'projects', 'N2N-BSD300-1')
 
 from train import Trainer
