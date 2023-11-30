@@ -44,6 +44,7 @@ def main():
     if mode == "train":
 
         TRAINER.train()
+        print("finished training")
     
     elif mode == "test":
 
