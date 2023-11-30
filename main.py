@@ -3,6 +3,7 @@ import sys
 sys.path.append(os.path.join(".."))
 
 my_folder = os.path.join('/g', 'prevedel', 'members', 'Rauscher')
+project_dir = os.path.join(my_folder, 'projects', 'N2N-BSD300-1')
 
 from train import Trainer
 
@@ -19,8 +20,8 @@ def main():
     data_dict['dir_train'] = os.path.join(data_dir, 'train')
     data_dict['dir_test'] =  os.path.join(data_dir, 'test')
     
-    data_dict['dir_results'] = os.path.join(my_folder, 'results')
-    data_dict['dir_checkpoints'] = os.path.join(my_folder, 'checkpoints')
+    data_dict['dir_results'] = os.path.join(project_dir, 'results')
+    data_dict['dir_checkpoints'] = os.path.join(project_dir, 'checkpoints')
 
     # adam optimizer
     data_dict['lr'] = 0.001
