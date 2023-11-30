@@ -13,7 +13,7 @@ project_dir = os.path.join(my_folder, 'projects', 'N2N-BSD300-1')
 
 from train import Trainer
 
-
+logging.info('test if logging works')
 def main():
 
     mode = "train"
@@ -53,6 +53,7 @@ def main():
 
 if __name__ == '__main__':
 
+    logging.info('executing main')
     main()
 
 log_file.close()
