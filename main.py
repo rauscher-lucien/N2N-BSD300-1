@@ -10,7 +10,7 @@ from train import Trainer
 
 def main():
 
-    mode = "test"
+    mode = "train"
 
     data_dict = {}
 
