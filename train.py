@@ -140,7 +140,7 @@ class Trainer:
                 input_net, label, clean_data = data['input'].to(self.device), data['label'].to(self.device), data['clean'].to(self.device)
 
                 # forward net
-                print('forwarding net')
+                # print('forwarding net')
                 output_net = Network(input_net)
 
                 # backward net
@@ -149,8 +149,8 @@ class Trainer:
                 loss.backward()
                 optim.step()
 
-                print('TRAIN: EPOCH %d: BATCH %04d: LOSS: %.4f: '
-                      % (epoch, batch, loss))
+                # print('TRAIN: EPOCH %d: BATCH %04d: LOSS: %.4f: '
+                #       % (epoch, batch, loss))
                 
             if (epoch % self.epoch_save_freq) == 0:
                 self.save(self.dir_checkpoints, Network, epoch)

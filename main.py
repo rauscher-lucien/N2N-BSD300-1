@@ -1,13 +1,9 @@
 import os
 import sys
+sys.path.append(os.path.join(".."))
 
-# Get the path of the script's directory
-code_directory = os.path.dirname(os.path.abspath(__file__))
-project_directory = os.path.dirname(code_directory)
-my_directory = os.path.dirname(os.path.dirname(project_directory))
-
-path = os.path.join(code_directory)
-sys.path.append(path)
+my_folder = os.path.join('/g', 'prevedel', 'members', 'Rauscher')
+data_folder = os.path.join(my_folder, 'data', 'BSD300', 'clean', 'test')
 
 from train import Trainer
 
@@ -19,13 +15,13 @@ def main():
     data_dict = {}
 
     #### directories ####
-    data_dir = os.path.join(my_directory, 'data', 'BSD300', 'clean')
+    data_dir = os.path.join(my_folder, 'data', 'BSD300', 'clean')
     
     data_dict['dir_train'] = os.path.join(data_dir, 'train')
     data_dict['dir_test'] =  os.path.join(data_dir, 'test')
-
-    data_dict['dir_results'] = os.path.join(project_directory, 'results')
-    data_dict['dir_checkpoints'] = os.path.join(project_directory, 'checkpoints')
+    
+    data_dict['dir_results'] = os.path.join(my_folder, 'results')
+    data_dict['dir_checkpoints'] = os.path.join(my_folder, 'checkpoints')
 
     # adam optimizer
     data_dict['lr'] = 0.001
