@@ -44,7 +44,7 @@ def main():
     if mode == "train":
 
         TRAINER.train()
-        print("finished training")
+        logging.debug('finished training')
     
     elif mode == "test":
 
