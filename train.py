@@ -132,8 +132,8 @@ class Trainer:
         logging.info('starting training loop')
         for epoch in range(start_epoch + 1, self.num_epochs + 1):
 
-
             ### training phase
+            logging.info('TRAIN: EPOCH %d: ' % (epoch))
 
             Network.train()
 
