@@ -1,4 +1,5 @@
 import os
+import logging
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
@@ -15,6 +16,8 @@ from model import UNet
 class Trainer:
 
     def __init__(self, data_dict):
+
+        logging.info('initializing Trainer class')
 
         # check if we have  a gpu
         if torch.cuda.is_available():
@@ -127,7 +130,7 @@ class Trainer:
         optim = torch.optim.Adam(params, lr=self.lr, betas=(self.beta1, self.beta2))
 
         #### Training ####
-        print('start training')
+        logging.info('starting training loop')
         for epoch in range(start_epoch + 1, self.num_epochs + 1):
 
 
