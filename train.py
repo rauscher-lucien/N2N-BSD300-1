@@ -18,7 +18,6 @@ class Trainer:
     def __init__(self, data_dict):
 
         logging.info('initializing Trainer class')
-        print(1)
         # check if we have  a gpu
         if torch.cuda.is_available():
             print("GPU is available")
