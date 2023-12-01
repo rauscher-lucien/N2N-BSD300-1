@@ -86,6 +86,26 @@ class Trainer:
 
         return network
 
+
+    def save_image(data, file_path):
+        """
+        Save a PyTorch tensor as an image file.
+
+        Parameters:
+        - data: PyTorch tensor
+        - file_path: File path to save the image
+        """
+        # Move the tensor to CPU if it's on CUDA
+        if data.is_cuda:
+            data = data.cpu()
+
+        # Convert PyTorch tensor to NumPy array
+        image_array = data.numpy()
+
+        # Save the image using matplotlib
+        plt.imsave(file_path, image_array.squeeze(), cmap='gray')
+
+
     def train(self):
 
         # generate Transformations
@@ -215,7 +235,7 @@ class Trainer:
                     plt.imsave(os.path.join(self.dir_results, fileset['input']), input_net[j, 0, :, :].squeeze(), cmap='gray')
                     plt.imsave(os.path.join(self.dir_results, fileset['output']), output_net[j, 0, :, :].squeeze(), cmap='gray')
                     plt.imsave(os.path.join(self.dir_results, fileset['label']), label[j, 0, :, :].squeeze(), cmap='gray')
-                    plt.imsave(os.path.join(self.dir_results, fileset['clean']), clean_data[j, 0, :, :].squeeze(), cmap='gray')
+                    self.save_image(clean_data[j, 0, :, :], os.path.join(self.dir_results, fileset['clean']))
 
                 print('TEST: %d: LOSS: %.6f' % (batch, loss.item()))
 
