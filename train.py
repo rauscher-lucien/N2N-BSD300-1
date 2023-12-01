@@ -179,7 +179,7 @@ class Trainer:
 
         # load network
 
-        Network = UNet()
+        Network = UNet().to(self.device)
 
         Network = self.load(self.dir_checkpoints, Network, epoch=self.epoch_to_load)
 
