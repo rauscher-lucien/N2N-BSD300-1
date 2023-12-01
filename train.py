@@ -87,7 +87,7 @@ class Trainer:
         return network
 
 
-    def save_image(data, file_path):
+    def save_image(self, data, file_path):
         """
         Save a PyTorch tensor as an image file.
 
