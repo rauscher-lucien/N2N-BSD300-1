@@ -14,7 +14,6 @@ project_dir = os.path.join(my_folder, 'projects', 'N2N-BSD300-1')
 
 from train import Trainer
 
-logging.info('test if logging works')
 def main():
 
     mode = "train"
